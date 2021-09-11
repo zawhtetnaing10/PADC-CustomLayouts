@@ -33,11 +33,7 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        child: CustomLayout(),
-      ),
-    );
+    return CustomLayout();
   }
 }
 
