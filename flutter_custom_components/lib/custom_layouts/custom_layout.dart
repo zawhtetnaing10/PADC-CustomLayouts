@@ -9,14 +9,17 @@ class CustomLayout extends StatelessWidget {
     return Stack(
       children: [
         FootballPitchBackgroundView(),
-        FormationView(),
+        //FormationViewFourFourTwo(),
+        //FormationViewFourTwoThreeOne(),
+        //FormationFourThreeThree(),
+        FormationThreeFourThree()
       ],
     );
   }
 }
 
-class FormationView extends StatelessWidget {
-  const FormationView({Key? key}) : super(key: key);
+class FormationViewFourFourTwo extends StatelessWidget {
+  const FormationViewFourFourTwo({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -43,6 +46,127 @@ class FormationView extends StatelessWidget {
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
             children: List.generate(4, (index) => PlayerView()),
+          ),
+          SizedBox(height: MediaQuery.of(context).size.height / 15),
+          PlayerView(
+            isGoalKeeper: true,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class FormationViewFourTwoThreeOne extends StatelessWidget {
+  const FormationViewFourTwoThreeOne({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.only(top: MARGIN_XXLARGE),
+      child: Column(
+        children: [
+          PlayerView(
+            isGoalKeeper: false,
+          ),
+          SizedBox(height: MediaQuery.of(context).size.height / 25),
+          GridView.count(
+            crossAxisCount: 3,
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            children: List.generate(3, (index) => PlayerView()),
+          ),
+          SizedBox(height: MediaQuery.of(context).size.height / 40),
+          GridView.count(
+            crossAxisCount: 2,
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            children: List.generate(2, (index) => PlayerView()),
+          ),
+          SizedBox(height: MediaQuery.of(context).size.height / 50),
+          GridView.count(
+            crossAxisCount: 4,
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            children: List.generate(4, (index) => PlayerView()),
+          ),
+          SizedBox(height: MediaQuery.of(context).size.height / 50),
+          PlayerView(
+            isGoalKeeper: true,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class FormationFourThreeThree extends StatelessWidget {
+  const FormationFourThreeThree({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.only(top: MARGIN_XXLARGE),
+      child: Column(
+        children: [
+          GridView.count(
+            crossAxisCount: 3,
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            children: List.generate(3, (index) => PlayerView()),
+          ),
+          SizedBox(height: MediaQuery.of(context).size.height / 25),
+          GridView.count(
+            crossAxisCount: 3,
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            children: List.generate(3, (index) => PlayerView()),
+          ),
+          SizedBox(height: MediaQuery.of(context).size.height / 15),
+          GridView.count(
+            crossAxisCount: 4,
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            children: List.generate(4, (index) => PlayerView()),
+          ),
+          SizedBox(height: MediaQuery.of(context).size.height / 15),
+          PlayerView(
+            isGoalKeeper: true,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class FormationThreeFourThree extends StatelessWidget {
+  const FormationThreeFourThree({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.only(top: MARGIN_XXLARGE),
+      child: Column(
+        children: [
+          GridView.count(
+            crossAxisCount: 3,
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            children: List.generate(3, (index) => PlayerView()),
+          ),
+          SizedBox(height: MediaQuery.of(context).size.height / 25),
+          GridView.count(
+            crossAxisCount: 4,
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            children: List.generate(4, (index) => PlayerView()),
+          ),
+          SizedBox(height: MediaQuery.of(context).size.height / 15),
+          GridView.count(
+            crossAxisCount: 3,
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            children: List.generate(3, (index) => PlayerView()),
           ),
           SizedBox(height: MediaQuery.of(context).size.height / 15),
           PlayerView(
